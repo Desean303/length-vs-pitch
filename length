@@ -24,18 +24,26 @@ class note:
 #f2.PlaySound()
 
 def bubbleSort(list):
-    for i in range(len(list)):
-        if i+1 < len(list) and list[i+1] > list[i]:
-            list[i], list[i+1] = list[i+1], list[i]
+    for j in range(len(list)-1):
+        print("pass number:", j+1)
+        for i in range(len(list)-1): #goes through the list once and flips stuff
+            if list[i+1].pitch > list[i].pitch:
+                list[i], list[i+1] = list[i+1], list[i]
+                list[i].PlaySound()
             
-            #while for i in range(len(list)):
-                  
-        if i+1 < len(list) and list[i+1] > list[i]:
-            list[i], list[i+1] = list[i+1], list[i]
+        
+        
 DeseanList = []
 for i in range(20):
     DeseanList.append(note(random.randrange(400, 2000), 300))
 
+print("playing unordered list:")
 for i in range(20):
-    DeseanList[i].PlaySound()
+    DeseanList[i].PlaySound() #play unordered list
+    
+print("bubble sorting!")
+bubbleSort(DeseanList)
 
+print("playing ORDERED list")
+for i in range(20):
+    DeseanList[i].PlaySound() #play ordered list
