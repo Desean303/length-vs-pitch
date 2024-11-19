@@ -1,0 +1,41 @@
+import winsound
+import random
+
+
+class note:
+    
+    def __init__(self, p, l):
+        self.pitch = p
+        self.length = l
+        
+    def PlaySound(self):
+        winsound.Beep(self.pitch, self.length)
+        
+    def PrintInfo(self):
+        print("I'm a note of pitch", self.pitch, "and length", self.length)
+   
+#--------------------
+       
+#instantiate objects
+#f1 = note(800,500)
+#f2 = note(1000,500)
+
+#f1.PlaySound()
+#f2.PlaySound()
+
+def bubbleSort(list):
+    for i in range(len(list)):
+        if i+1 < len(list) and list[i+1] > list[i]:
+            list[i], list[i+1] = list[i+1], list[i]
+            
+            #while for i in range(len(list)):
+                  
+        if i+1 < len(list) and list[i+1] > list[i]:
+            list[i], list[i+1] = list[i+1], list[i]
+DeseanList = []
+for i in range(20):
+    DeseanList.append(note(random.randrange(400, 2000), 300))
+
+for i in range(20):
+    DeseanList[i].PlaySound()
+
